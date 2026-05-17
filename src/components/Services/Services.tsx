@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import { ActionIcon, Stack, Text } from '@mantine/core';
+import { ActionIcon, Container, Stack, Text } from '@mantine/core';
 import { IconCaretLeftFilled, IconCaretRightFilled } from '@tabler/icons-react';
 import { useRef } from 'react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
@@ -66,74 +66,78 @@ export const Services = () => {
   const nextRef = useRef(null);
   return (
     <div className={classes.gradientSec}>
-      <Stack gap={8}>
-        <Text c="white" size="lg" my={16} fw="bold">
-          موانع رایج در دریافت خدمات تولید محتوا برای کسب‌وکارها
-        </Text>
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={24}
-          slidesPerView={1}
-          loop={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            640: { slidesPerView: 2, spaceBetween: 16 },
-            768: { slidesPerView: 3, spaceBetween: 16 },
-            1024: { slidesPerView: 4, spaceBetween: 24 },
-          }}
-          style={{ width: '100%' }}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          onBeforeInit={(swiper) => {
-            if (swiper.params.navigation && typeof swiper.params.navigation === 'object') {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-            }
+      <Container size="xl">
+        <Stack pos="relative" gap={8}>
+          <Text c="white" size="lg" my={16} fw="bold">
+            موانع رایج در دریافت خدمات تولید محتوا برای کسب‌وکارها
+          </Text>
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={24}
+            slidesPerView={1}
+            loop={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              640: { slidesPerView: 2, spaceBetween: 16 },
+              768: { slidesPerView: 3, spaceBetween: 16 },
+              1024: { slidesPerView: 4, spaceBetween: 24 },
+            }}
+            style={{ width: '100%' }}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            onBeforeInit={(swiper) => {
+              if (swiper.params.navigation && typeof swiper.params.navigation === 'object') {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+              }
 
-            if (swiper.navigation) {
-              swiper.navigation.init();
-              swiper.navigation.update();
-            }
-          }}
-        >
-          {services.map((i) => (
-            <SwiperSlide key={i.title}>
-              <Card imgUrl={i.imgUrl} title={i.title} description={i.description} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        {/* Custom navigation buttons */}
-        <ActionIcon
-          variant="default"
-          ref={prevRef}
-          style={{
-            position: 'absolute',
-            left: '-16px',
-            top: '60%',
-            zIndex: 10,
-          }}
-        >
-          <IconCaretLeftFilled />
-        </ActionIcon>
+              if (swiper.navigation) {
+                swiper.navigation.init();
+                swiper.navigation.update();
+              }
+            }}
+          >
+            {services.map((i) => (
+              <SwiperSlide key={i.title}>
+                <Card imgUrl={i.imgUrl} title={i.title} description={i.description} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          {/* Custom navigation buttons */}
+          <ActionIcon
+            variant="default"
+            ref={prevRef}
+            visibleFrom="md"
+            style={{
+              position: 'absolute',
+              left: '-12px',
+              top: '60%',
+              zIndex: 10,
+            }}
+          >
+            <IconCaretLeftFilled />
+          </ActionIcon>
 
-        <ActionIcon
-          ref={nextRef}
-          variant="default"
-          style={{
-            position: 'absolute',
-            right: '-16px',
-            top: '60%',
-            zIndex: 10,
-          }}
-        >
-          <IconCaretRightFilled />
-        </ActionIcon>
-      </Stack>
+          <ActionIcon
+            ref={nextRef}
+            variant="default"
+            visibleFrom="md"
+            style={{
+              position: 'absolute',
+              right: '-12px',
+              top: '60%',
+              zIndex: 10,
+            }}
+          >
+            <IconCaretRightFilled />
+          </ActionIcon>
+        </Stack>
+      </Container>
     </div>
   );
 };

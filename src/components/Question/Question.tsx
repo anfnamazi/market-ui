@@ -1,4 +1,4 @@
-import { Grid, Stack, Text } from '@mantine/core';
+import { Box, Container, Grid, Stack, Text } from '@mantine/core';
 import { Accordions } from '../Common/Accordion/Accordion.tsx';
 import classes from './Question.module.css';
 
@@ -27,19 +27,28 @@ const questions = [
 
 export const Question = () => {
   return (
-    <Grid px={{ base: 0, md: 40 }} py={{ base: 40, md: 80 }} bg="white" className={classes.faqSec}>
-      <Grid.Col span={{ base: 12, md: 4 }}>
-        <Stack gap={8} className={classes.faqTxt}>
-          <h3 style={{ whiteSpace: 'nowrap' }}>FAQ</h3>
-          <h3 style={{ whiteSpace: 'nowrap' }}>سوالات متداولی که از ما می‌پرسید</h3>
-          <Text style={{ textAlign: 'start' }} visibleFrom="md">
-            سوالات متداولی که ممکن است نیاز شما نیز باشند در اینجا پاسخ داده شده اند:
-          </Text>
-        </Stack>
-      </Grid.Col>
-      <Grid.Col span={{ base: 12, md: 8 }}>
-        <Accordions data={questions} />
-      </Grid.Col>
-    </Grid>
+    <Box className={classes.faqSec}>
+      <Container size="xl">
+        <Grid
+          px={{ base: 0, md: 40 }}
+          py={{ base: 40, md: 80 }}
+          style={{ borderRadius: 8 }}
+          bg="white"
+        >
+          <Grid.Col span={{ base: 12, md: 4 }}>
+            <Stack gap={8} className={classes.faqTxt}>
+              <h3 style={{ whiteSpace: 'nowrap' }}>FAQ</h3>
+              <h3 style={{ whiteSpace: 'nowrap' }}>سوالات متداولی که از ما می‌پرسید</h3>
+              <Text style={{ textAlign: 'start' }} visibleFrom="md">
+                سوالات متداولی که ممکن است نیاز شما نیز باشند در اینجا پاسخ داده شده اند:
+              </Text>
+            </Stack>
+          </Grid.Col>
+          <Grid.Col span={{ base: 12, md: 8 }}>
+            <Accordions data={questions} />
+          </Grid.Col>
+        </Grid>
+      </Container>
+    </Box>
   );
 };
