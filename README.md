@@ -72,6 +72,6 @@ export default defineConfig([
 ]);
 ```
 
-# market-template
+# market-ui
 
 # market-ui

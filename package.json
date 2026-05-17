@@ -1,7 +1,7 @@
 {
   "name": "market-ui",
   "private": true,
-  "homepage": "https://github.com/anfnamazi/market-template",
+  "homepage": "https://github.com/anfnamazi/market-ui",
   "version": "0.0.0",
   "type": "module",
   "lint-staged": {
