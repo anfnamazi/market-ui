@@ -14,7 +14,7 @@
 }
 
 .accordion[data-active] {
-  background-color: #141414;
+  background: linear-gradient(0deg, #7a3de2 0%, #43217c 100%);
 
   * {
     color: #fff;

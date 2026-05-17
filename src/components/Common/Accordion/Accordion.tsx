@@ -1,8 +1,8 @@
 // @flow
 
 import { Accordion } from '@mantine/core';
+import { IconCircleMinus, IconCirclePlus } from '@tabler/icons-react';
 import { useState } from 'react';
-import { IconMinus, IconPlus } from '@tabler/icons-react';
 import classes from './Accordion.module.css';
 
 type Props = {
@@ -16,11 +16,13 @@ export const Accordions = (props: Props) => {
   const items = props.data.map((item, index) => (
     <Accordion.Item key={`${index}`} value={`${index}`} mt={8} px={8} className={classes.accordion}>
       <Accordion.Control
-        chevron={value === `${index}` ? <IconMinus size={20} /> : <IconPlus size={20} />}
+        chevron={
+          value === `${index}` ? <IconCircleMinus size={20} /> : <IconCirclePlus size={20} />
+        }
       >
         {item.title}
       </Accordion.Control>
-      <Accordion.Panel style={{ borderTop: '1px solid #373737', textAlign: 'start' }}>
+      <Accordion.Panel style={{ borderTop: '1px solid #ECECEC', textAlign: 'start' }}>
         {item.body}
       </Accordion.Panel>
     </Accordion.Item>

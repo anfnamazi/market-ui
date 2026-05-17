@@ -1,0 +1,37 @@
+.faqTxt {
+  text-align: start;
+
+  @media (max-width: 62em) {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+.faqSec {
+  border-radius: 8px;
+  position: relative;
+
+  &::after {
+    content: '';
+    background: #303030;
+    position: absolute;
+    top: 100%;
+    right: -50%;
+    left: -50%;
+    bottom: 150%;
+    height: 150px;
+  }
+
+  @media (max-width: 62em) {
+    &::before {
+      content: '';
+      background: white;
+      position: absolute;
+      top: 0;
+      right: -50%;
+      left: -50%;
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+}

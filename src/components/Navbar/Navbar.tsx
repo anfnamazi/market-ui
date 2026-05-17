@@ -1,28 +1,53 @@
 // App.tsx
-import {Box, Button, Group,} from '@mantine/core';
-import {IconLogin} from "@tabler/icons-react";
+import { ActionIcon, Anchor, Box, Button, Group } from '@mantine/core';
+import { IconMenu2, IconSearch, IconUser } from '@tabler/icons-react';
+import classes from './Navbar.module.css';
 
 export default function Navbar() {
+  return (
+    <Box className={classes.navbar}>
+      <Group gap="xs">
+        <Group hiddenFrom="md">
+          <ActionIcon variant="transparent" c="dark" size="lg" radius="md">
+            <IconMenu2 />
+          </ActionIcon>
+        </Group>
+        <Button variant="subtle" c="dark" bg="#ECECEC" radius="lg" px="lg">
+          logo
+        </Button>
+      </Group>
+      <Group gap="xl" visibleFrom="md">
+        <Anchor href="#" underline="hover" c="dark">
+          خانه
+        </Anchor>
+        <Anchor href="#" underline="hover" c="dark">
+          طراحی سایت
+        </Anchor>
+        <Anchor href="#" underline="hover" c="dark">
+          کمپین‌های بازاریابی و تبلیغاتی
+        </Anchor>
+        <Anchor href="#" underline="hover" c="dark">
+          اتوماسیون و بازاریابی
+        </Anchor>
+        <Anchor href="#" underline="hover" c="dark">
+          تولید محتوا
+        </Anchor>
+        <Anchor href="#" underline="hover" c="dark">
+          سئو
+        </Anchor>
+        <Anchor href="#" underline="hover" c="dark">
+          تماس با ما
+        </Anchor>
+      </Group>
 
-    return (
-        <Box style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            height: 60,
-            padding: '0 1rem',
-            background: '#F5F5F5',
-            borderRadius: 16,
-        }}>
-            <Group gap="md" visibleFrom="sm">
-                <img src="./images/one-logo.png"/>
-                <Button variant="subtle">جستجو بلیط</Button>
-                <Button variant="subtle">درباره ما</Button>
-                <Button variant="subtle">پرسش های متداول</Button>
-                <Button variant="subtle">تماس با ما</Button>
-            </Group>
-
-            <Box fw={700}><Button radius={16} leftSection={<IconLogin/>}>ورود/ثبت نام</Button></Box>
-        </Box>
-    );
+      <Group gap="xs">
+        <ActionIcon variant="default" size="lg" radius="md">
+          <IconSearch />
+        </ActionIcon>
+        <ActionIcon variant="default" size="lg" radius="md">
+          <IconUser />
+        </ActionIcon>
+      </Group>
+    </Box>
+  );
 }

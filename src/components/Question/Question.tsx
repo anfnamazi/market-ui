@@ -1,55 +1,45 @@
-import { Box, Button, Flex, Stack, Text } from '@mantine/core';
-import { IconArrowLeft } from '@tabler/icons-react';
+import { Grid, Stack, Text } from '@mantine/core';
 import { Accordions } from '../Common/Accordion/Accordion.tsx';
+import classes from './Question.module.css';
 
 const questions = [
   {
-    title: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟',
+    title: 'مراحل طراحی وب سایت چیست؟',
     body: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز.',
   },
   {
-    title: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟',
+    title: 'مراحل طراحی وب سایت چیست؟',
     body: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز.',
   },
   {
-    title: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟',
+    title: 'مراحل طراحی وب سایت چیست؟',
     body: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز.',
   },
   {
-    title: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟',
+    title: 'مراحل طراحی وب سایت چیست؟',
     body: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز.',
   },
   {
-    title: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ؟',
+    title: 'مراحل طراحی وب سایت چیست؟',
     body: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز.',
   },
 ];
 
 export const Question = () => {
   return (
-    <Flex gap={24}>
-      <Box>
-        <img src="./images/plane.png" width={392} height={443} />
-      </Box>
-      <Stack gap={4}>
-        <Flex justify="start" align="center" gap={16}>
-          <h2 style={{ whiteSpace: 'nowrap' }}>پرسش های متداول</h2>
-          <ul>
-            <li>
-              <Text size="xs" style={{ textAlign: 'start' }}>
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                گرافیک است
-              </Text>
-            </li>
-          </ul>
-          <Box>
-            <Button size="sm" px="xl" radius="lg" rightSection={<IconArrowLeft />}>
-              مشاهده بیشتر
-            </Button>
-          </Box>
-        </Flex>
+    <Grid px={{ base: 0, md: 40 }} py={{ base: 40, md: 80 }} bg="white" className={classes.faqSec}>
+      <Grid.Col span={{ base: 12, md: 4 }}>
+        <Stack gap={8} className={classes.faqTxt}>
+          <h3 style={{ whiteSpace: 'nowrap' }}>FAQ</h3>
+          <h3 style={{ whiteSpace: 'nowrap' }}>سوالات متداولی که از ما می‌پرسید</h3>
+          <Text style={{ textAlign: 'start' }} visibleFrom="md">
+            سوالات متداولی که ممکن است نیاز شما نیز باشند در اینجا پاسخ داده شده اند:
+          </Text>
+        </Stack>
+      </Grid.Col>
+      <Grid.Col span={{ base: 12, md: 8 }}>
         <Accordions data={questions} />
-      </Stack>
-    </Flex>
+      </Grid.Col>
+    </Grid>
   );
 };
