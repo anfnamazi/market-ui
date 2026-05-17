@@ -12,3 +12,11 @@
     z-index: -1;
   }
 }
+
+.slide {
+  width: 282px;
+
+  @media (max-width: 62em) {
+    width: 230px;
+  }
+}

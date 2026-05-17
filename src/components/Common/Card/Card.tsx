@@ -11,7 +11,7 @@ export const Card = (props: Props) => {
       px={16}
       py={{ base: 16, md: 24 }}
       bg="white"
-      w={{ base: 230, md: 282 }}
+      w="100%"
       h={{ base: 198, md: 226 }}
       style={{ border: '1px solid #E3E3E3', borderRadius: 8 }}
     >

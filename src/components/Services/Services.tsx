@@ -73,17 +73,12 @@ export const Services = () => {
           </Text>
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={24}
-            slidesPerView={1}
+            slidesPerView="auto"
+            spaceBetween={16}
             loop={true}
             autoplay={{
               delay: 2500,
               disableOnInteraction: false,
-            }}
-            breakpoints={{
-              640: { slidesPerView: 2, spaceBetween: 16 },
-              768: { slidesPerView: 3, spaceBetween: 16 },
-              1024: { slidesPerView: 4, spaceBetween: 24 },
             }}
             style={{ width: '100%' }}
             navigation={{
@@ -103,7 +98,7 @@ export const Services = () => {
             }}
           >
             {services.map((i) => (
-              <SwiperSlide key={i.title}>
+              <SwiperSlide key={i.title} className={classes.slide}>
                 <Card imgUrl={i.imgUrl} title={i.title} description={i.description} />
               </SwiperSlide>
             ))}
