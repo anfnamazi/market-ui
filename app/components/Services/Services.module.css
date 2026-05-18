@@ -1,0 +1,22 @@
+.gradientSec {
+    position: relative;
+}
+
+.gradientSec::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0%;
+    left: 0%;
+    bottom: 60px;
+    background: linear-gradient(0deg, #7a3de2 0%, #43217c 100%);
+    z-index: -1;
+}
+
+.slide {
+    width: 282px;
+
+    @media (max-width: 768px) {
+        width: 230px;
+    }
+}

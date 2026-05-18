@@ -1,0 +1,36 @@
+.faqTxt {
+    text-align: start;
+
+    @media (max-width: 768px) {
+        text-align: center;
+        align-items: center;
+    }
+}
+
+.faqSec {
+    position: relative;
+}
+
+.faqSec::after {
+    content: "";
+    background: #303030;
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    left: 0%;
+    bottom: 150%;
+    height: 150px;
+}
+
+@media (max-width: 768px) {
+    .faqSec::before {
+        content: "";
+        background: white;
+        position: absolute;
+        top: 0;
+        right: 0%;
+        left: 0%;
+        bottom: 0;
+        z-index: -1;
+    }
+}

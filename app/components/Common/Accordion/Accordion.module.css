@@ -1,0 +1,20 @@
+.chevron[data-rotate] {
+    transform: rotate(45deg);
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+}
+
+.accordion {
+    background-color: #f5f5f5;
+}
+
+.accordion[data-active] {
+    background: linear-gradient(0deg, #7a3de2 0%, #43217c 100%);
+}
+
+.accordion[data-active] * {
+    color: #fff;
+}
